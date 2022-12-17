@@ -10,8 +10,8 @@ async function main() {
 
   const lockedAmount = hre.ethers.utils.parseEther("1");
 
-  const ReentrantFactory = await hre.ethers.getContractFactory("reentrant");
-  const Reentrant = await ReentrantFactory.deploy("0xC92d172D437A37c113B3c8a278bD723f708eD7b3");
+  const ReentrantFactory = await hre.ethers.getContractFactory("naughtCoin");
+  const Reentrant = await ReentrantFactory.deploy();
 
   await Reentrant.deployed();
   console.log(Reentrant.address)
