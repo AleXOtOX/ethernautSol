@@ -10,7 +10,7 @@ async function main() {
 
   const lockedAmount = hre.ethers.utils.parseEther("1");
 
-  const ReentrantFactory = await hre.ethers.getContractFactory("denial");
+  const ReentrantFactory = await hre.ethers.getContractFactory("Buyer");
   const Reentrant = await ReentrantFactory.deploy();
 
   await Reentrant.deployed();
